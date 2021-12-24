@@ -24,17 +24,38 @@
         </style>
     </head>
     <body class="antialiased">
-        User List
-        <button>Add User</button>
-        <table>
-            <tbody>
-            @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->name }}</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+    <div class="container">
+        <header>
+            <div class="container">
+                <h1>User List</h1>
+            </div>
+        </header>
+        <div class="row align-items-start">
+            <div class="col">
+                <a href="#" class="btn btn-success mb-2">Add User</a>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td><a href="#" class="btn btn-warning">Edit</a></td>
+                            <td><a href="#" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     </body>
 </html>
