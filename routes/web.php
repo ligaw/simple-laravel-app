@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    return view('welcome');
+    return view('user-list');
 })->name('user-list');
