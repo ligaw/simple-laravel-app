@@ -28,8 +28,12 @@
         <button>Add User</button>
         <table>
             <tbody>
-                <tr><td>User 1</td></tr>
-                <tr><td>User 2</td></tr>
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->name }}</td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </body>

@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    return view('user-list');
+    return view('user-list', [
+        'users' => App\Models\User::all()
+    ]);
 })->name('user-list');
