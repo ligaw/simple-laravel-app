@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class UserAddPageTest extends TestCase
@@ -25,10 +26,10 @@ class UserAddPageTest extends TestCase
     public function test_can_add_user(): void
     {
         $user = new User;
-        $user->name = str_random(10);
+        $user->name = Str::random(10);
         $user->save();
 
-        $response = $this->get(route('user-list'));
+        $response = $this->get(route('users.index'));
 
         $response->assertSeeText($user->name);
     }
