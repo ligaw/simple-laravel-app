@@ -1,4 +1,11 @@
 <x-layout>
   <x-slot name="title">Add User</x-slot>
-  <a href="#" class="btn btn-success mb-2">Add User</a>
+  <form method="POST" action="{{ route('users.store')}}">
+    @csrf
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add User" />
+  </form>
 </x-layout>
