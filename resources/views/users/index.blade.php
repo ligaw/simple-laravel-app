@@ -1,6 +1,6 @@
 <x-layout>
   <x-slot name="title">User List</x-slot>
-  <a href="#" class="btn btn-success mb-2">Add User</a>
+  <a href="{{ route('users.create') }}" class="btn btn-success mb-2">Add User</a>
   <table class="table table-bordered">
       <thead>
       <tr>
